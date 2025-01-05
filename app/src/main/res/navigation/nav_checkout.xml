@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_checkout"
+    app:startDestination="@id/addressFragment">
+
+    <fragment
+        android:id="@+id/addressFragment"
+        android:name="com.hasanalic.ecommerce.feature_checkout.presentation.address_screen.views.AddressFragment"
+        android:label="AddressFragment"
+        tools:layout="@layout/fragment_address">
+        <action
+            android:id="@+id/action_addressFragment_to_shippingFragment"
+            app:destination="@id/shippingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shippingFragment"
+        android:name="com.hasanalic.ecommerce.feature_checkout.presentation.shipping_screen.ShippingFragment"
+        android:label="ShippingFragment"
+        tools:layout="@layout/fragment_shipping">
+        <action
+            android:id="@+id/action_shippingFragment_to_paymentMethodsFragment"
+            app:destination="@id/paymentMethodsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentMethodsFragment"
+        android:name="com.hasanalic.ecommerce.feature_checkout.presentation.payment_methods_screen.PaymentMethodsFragment"
+        android:label="PaymentMethodsFragment"
+        tools:layout="@layout/fragment_payment_methods">
+        <action
+            android:id="@+id/action_paymentMethodsFragment_to_cardFragment"
+            app:destination="@id/paymentCardFragment" />
+        <action
+            android:id="@+id/action_paymentMethodsFragment_to_successFragment"
+            app:destination="@id/successFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentCardFragment"
+        android:name="com.hasanalic.ecommerce.feature_checkout.presentation.payment_card_screen.views.PaymentCardFragment"
+        android:label="CardFragment"
+        tools:layout="@layout/fragment_payment_card">
+        <action
+            android:id="@+id/action_paymentCardFragment_to_successFragment"
+            app:destination="@id/successFragment" />
+        <action
+            android:id="@+id/action_paymentCardFragment_to_cardsFragment"
+            app:destination="@id/cardsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/successFragment"
+        android:name="com.hasanalic.ecommerce.feature_checkout.presentation.checkout_end_screen.SuccessFragment"
+        android:label="SuccessFragment"
+        tools:layout="@layout/fragment_success"/>
+    <fragment
+        android:id="@+id/cardsFragment"
+        android:name="com.hasanalic.ecommerce.feature_checkout.presentation.cards_screen.views.CardsFragment"
+        android:label="CardsFragment"
+        tools:layout="@layout/fragment_cards">
+        <action
+            android:id="@+id/action_cardsFragment_to_successFragment"
+            app:destination="@id/successFragment" />
+    </fragment>
+    <!-- -->
+</navigation>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.hasanalic.ecommerce.feature_home.presentation.home_screen.views.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_filteredProductsFragment"
+            app:destination="@id/filteredProductsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/filteredProductsFragment"
+        android:name="com.hasanalic.ecommerce.feature_home.presentation.filtered_screen.views.FilteredProductsFragment"
+        android:label="FilteredProductsFragment"
+        tools:layout="@layout/fragment_filtered_products">
+        <argument
+            android:name="keyword"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="category"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
+    <!-- -->
+
+</navigation>
